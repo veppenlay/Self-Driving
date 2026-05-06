@@ -31,6 +31,7 @@ v-Net/
   checkpoints/                     # 当前保留的两个最佳权重
   experiments/                     # 关键实验指标和报告
   configs/                         # 云端训练命令模板
+  docs/云端实验工作流_CN.md          # GPT 方案、云端训练、本地分析的交接规范
   dataset/                         # 本地/云端数据放置目录，不提交图片
   runs/                            # 训练输出目录，不提交
   output/                          # 评估/导出输出目录，不提交
@@ -142,6 +143,34 @@ python scripts/compare_regression_models.py \
   --flat-dataset test=dataset/temporal3_data \
   --output-dir output/eval
 ```
+
+## 云端实验交接
+
+后续推荐采用固定协作方式：GPT 给出实验方案，云端训练，本地拉回轻量产物做分析。详细规范见：
+
+```text
+docs/云端实验工作流_CN.md
+```
+
+云端训练完成后，建议打包每次实验的必要产物：
+
+```bash
+python scripts/package_run_artifacts.py \
+  --run-dir runs/<experiment_id> \
+  --output-dir artifacts/<experiment_id>
+```
+
+如果已经生成评估结果，可一起带回：
+
+```bash
+python scripts/package_run_artifacts.py \
+  --run-dir runs/<experiment_id> \
+  --output-dir artifacts/<experiment_id> \
+  --extra output/<experiment_id> \
+  --extra experiments/<experiment_id>_metrics.json
+```
+
+最低限度应拉回 `best_*.pth`、`training_summary.json`、评估指标、训练日志、命令记录、代码提交号、依赖冻结文件和 `artifact_manifest.json`。
 
 ## 导出 ONNX
 

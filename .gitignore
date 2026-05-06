@@ -34,6 +34,10 @@ desktop.ini
 !/runs/README.md
 /output/*
 !/output/README.md
+/artifacts/*
+!/artifacts/README.md
+/experiments/cloud_runs/*
+!/experiments/cloud_runs/README.md
 **/events.out.tfevents*
 *.log
 
