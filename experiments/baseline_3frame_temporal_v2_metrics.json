@@ -1,0 +1,74 @@
+{
+  "baselineName": "baseline_3frame_temporal_v2",
+  "createdAt": "2026-05-01T13:08:28",
+  "checkpoint": "E:\\桌面\\Epaicar\\temporal3_project\\runs\\baseline_3frame_temporal_v2\\best_baseline_3frame_temporal_v2.pth",
+  "model": {
+    "variant": "temporal3",
+    "numFrames": 3,
+    "frameStride": 1,
+    "preprocess": {
+      "colorSpace": "hsv",
+      "inputSize": [
+        144,
+        192
+      ],
+      "useRoi": false
+    },
+    "parameters": {
+      "total": 1019968,
+      "trainable": 1019968
+    },
+    "fileSize": {
+      "bytes": 12673525,
+      "miB": 12.08641529083252
+    }
+  },
+  "datasets": {
+    "test_clean": {
+      "name": "test_clean",
+      "numImages": 262,
+      "split": "test",
+      "recursive": false,
+      "temporalPaddingMode": "replicate_current_frame_for_missing_history",
+      "temporalPaddingDescription": "When a requested history frame is missing, fall back to the current frame path for that missing slot. This preserves the existing project behavior and keeps sequence-start samples trainable.",
+      "mae": 0.07534733555676373,
+      "rmse": 0.22109037306267804,
+      "source": "E:\\桌面\\Epaicar\\temporal3_project\\dataset\\data_train"
+    },
+    "data1": {
+      "name": "data1",
+      "numImages": 1743,
+      "split": null,
+      "recursive": false,
+      "temporalPaddingMode": "replicate_current_frame_for_missing_history",
+      "temporalPaddingDescription": "When a requested history frame is missing, fall back to the current frame path for that missing slot. This preserves the existing project behavior and keeps sequence-start samples trainable.",
+      "mae": 0.12482470274419533,
+      "rmse": 0.33078433003961194,
+      "source": "E:\\桌面\\Epaicar\\temporal3_project\\dataset\\data_aug"
+    },
+    "external": {
+      "name": "external_test",
+      "numImages": 541,
+      "split": null,
+      "recursive": true,
+      "temporalPaddingMode": "replicate_current_frame_for_missing_history",
+      "temporalPaddingDescription": "When a requested history frame is missing, fall back to the current frame path for that missing slot. This preserves the existing project behavior and keeps sequence-start samples trainable.",
+      "mae": 0.6625537253331787,
+      "rmse": 1.0756365474923972,
+      "source": "E:\\桌面\\Epaicar\\temporal3_project\\dataset\\data_test"
+    }
+  },
+  "latencyBenchmark": {
+    "runtime": "pytorch",
+    "device": "cuda",
+    "batchSize": 1,
+    "warmupIterations": 30,
+    "measuredIterations": 200,
+    "latencyMs": 5.09041199999956,
+    "fps": 196.4477531484851,
+    "memory": {
+      "devicePeakAllocatedMiB": 30.119140625,
+      "devicePeakReservedMiB": 42.0
+    }
+  }
+}

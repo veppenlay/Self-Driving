@@ -1,0 +1,89 @@
+{
+  "name": "baseline_3frame_temporal_v2",
+  "status": "measured_20260430",
+  "description": "当前在整理后的 temporal3_project 工作区内重新训练得到的 3-frame Temporal V2 基线。",
+  "train": {
+    "script": "train.py",
+    "env": {
+      "VENET_DATA_FOLDER": "dataset/data_train",
+      "VENET_MODEL_VARIANT": "temporal3",
+      "VENET_NUM_FRAMES": "3",
+      "VENET_FRAME_STRIDE": "1",
+      "VENET_OUTPUT_DIR": "runs/baseline_3frame_temporal_v2",
+      "VENET_SAVE_NAME": "baseline_3frame_temporal_v2.pth",
+      "VENET_BEST_SAVE_NAME": "best_baseline_3frame_temporal_v2.pth",
+      "VENET_EPOCHS": "80",
+      "VENET_BATCH_SIZE": "16",
+      "VENET_USE_WEIGHTED_SAMPLER": "1",
+      "VENET_USE_PRETRAINED": "1",
+      "VENET_FREEZE_BACKBONE_EPOCHS": "0",
+      "VENET_TEACHER_WEIGHT": "0.0",
+      "VENET_EMA_DECAY": "0.995"
+    }
+  },
+  "artifacts": {
+    "checkpoint": "runs/baseline_3frame_temporal_v2/best_baseline_3frame_temporal_v2.pth",
+    "trainingSummary": "runs/baseline_3frame_temporal_v2/training_summary.json",
+    "ablationSummary": "output/temporal_ablation_2frame_vs_3frame_20260430/temporal_ablation_summary.json",
+    "ablationReport": "output/temporal_ablation_2frame_vs_3frame_20260430/TEMPORAL_ABLATION_REPORT.md"
+  },
+  "model": {
+    "variant": "temporal3",
+    "numFrames": 3,
+    "frameStride": 1,
+    "preprocess": {
+      "colorSpace": "hsv",
+      "inputSize": [
+        144,
+        192
+      ],
+      "useRoi": false
+    },
+    "parameterCount": 1019968,
+    "modelFileSizeBytes": 12673525,
+    "modelFileSizeMiB": 12.08641529083252
+  },
+  "selectionMetric": {
+    "name": "val_stress_mae_fallback",
+    "value": 0.08707142078899333,
+    "bestEpoch": 80
+  },
+  "metrics": {
+    "test_clean": {
+      "mae": 0.07534733555676373,
+      "rmse": 0.22109037306267804
+    },
+    "data1": {
+      "mae": 0.12482470274419533,
+      "rmse": 0.33078433003961194
+    },
+    "data_extra": {
+      "datasetName": "kunmingr2",
+      "mae": 0.6429867138975074,
+      "rmse": 0.9941403513036787
+    },
+    "data_test": {
+      "mae": 0.6625537253331787,
+      "rmse": 1.0756365474923972
+    },
+    "latency": {
+      "device": "cuda",
+      "singleInferenceMs": 8.688050999999177,
+      "fps": 115.10061347477065,
+      "memory": {
+        "devicePeakAllocatedMiB": 30.119140625,
+        "devicePeakReservedMiB": 42.0
+      }
+    }
+  },
+  "temporalPadding": {
+    "paddingMode": "replicate_current_frame_for_missing_history",
+    "samplesWithMissingHistory": 2,
+    "totalMissingHistoryFrames": 3,
+    "maxMissingHistoryFramesPerSample": 2
+  },
+  "notes": [
+    "该文件已替代此前仅包含历史占位信息的基线记录。",
+    "当前环境中的延迟测试基于 GPU，仅用于相对对比，不能直接视为板端部署延迟。"
+  ]
+}

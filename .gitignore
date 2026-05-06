@@ -1,0 +1,51 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Datasets and generated data
+/dataset/*
+!/dataset/README.md
+/data/
+/data_aug/
+/data1/
+/tmp*/
+
+# Training outputs
+/runs/*
+!/runs/README.md
+/output/*
+!/output/README.md
+**/events.out.tfevents*
+*.log
+
+# Large generated artifacts
+*.onnx
+*.engine
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Keep curated released checkpoints in this clean repo
+!checkpoints/**/*.pth
+!checkpoints/**/*.json

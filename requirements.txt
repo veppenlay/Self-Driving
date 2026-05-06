@@ -1,0 +1,10 @@
+﻿torch>=2.1
+torchvision>=0.16
+tensorboard>=2.15
+albumentations>=1.4
+opencv-python>=4.8
+numpy>=1.26
+matplotlib>=3.8
+pillow>=10.0
+onnx>=1.15
+onnxruntime>=1.17
