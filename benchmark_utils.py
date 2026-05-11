@@ -13,7 +13,7 @@ import json
 import math
 import os
 import time
-from ctypes import Structure, WinDLL, byref, c_size_t, c_ulong, sizeof
+from ctypes import Structure, byref, c_size_t, c_ulong, sizeof
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -269,6 +269,8 @@ class _ProcessMemoryCounters(Structure):
 def _process_memory_snapshot_mib() -> dict[str, float] | None:
     if os.name == "nt":
         try:
+            from ctypes import WinDLL
+
             kernel32 = WinDLL("kernel32", use_last_error=True)
             psapi = WinDLL("psapi", use_last_error=True)
             counters = _ProcessMemoryCounters()
