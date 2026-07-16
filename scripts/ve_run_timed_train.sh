@@ -2,13 +2,13 @@
 # Timed training wrapper for ve GPU instance.
 set -euo pipefail
 
-REPO="/root/autodl-tmp/v-Net"
+REPO="/root/autodl-tmp/v-Net_cursor"
 OUT_DIR="${REPO}/locked_model/runs/ve_seq_cfc_temporal3_2d"
 LOG="${OUT_DIR}/train.log"
 CLOCK="${OUT_DIR}/wall_clock.txt"
 
 source /root/miniconda3/etc/profile.d/conda.sh
-conda activate /root/autodl-tmp/envs/vnet
+conda activate /root/autodl-tmp/envs/vnet_cursor
 cd "${REPO}"
 mkdir -p "${OUT_DIR}"
 

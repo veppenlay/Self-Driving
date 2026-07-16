@@ -1,0 +1,23 @@
+{
+  "baselineHmm": 0.167248,
+  "results": [
+    {
+      "exp": "exp_A2_temporal_ln",
+      "raw": "0.236910",
+      "hmm": "0.199187",
+      "verdict": "淘汰"
+    },
+    {
+      "exp": "exp_B0_nll",
+      "raw": "0.220097",
+      "hmm": "0.196002",
+      "verdict": "淘汰"
+    },
+    {
+      "exp": "exp_D1_framediff",
+      "raw": "0.233722",
+      "hmm": "0.165184",
+      "verdict": "晋级"
+    }
+  ]
+}

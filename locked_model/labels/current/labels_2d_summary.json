@@ -1,0 +1,38 @@
+{
+  "datasetRoot": "E:\\桌面\\v-Net\\dataset\\26合并",
+  "testRoot": null,
+  "referenceYRatio": 0.54,
+  "labelCount": 3646,
+  "splitCounts": {
+    "test": 423,
+    "train": 2654,
+    "val": 569
+  },
+  "statusCounts": {
+    "ok": 1487,
+    "inferred_missing_left": 973,
+    "insufficient_yellow_edges": 600,
+    "inferred_missing_right": 575,
+    "narrow_lane_width": 11
+  },
+  "laneWidthPriorPx": 411.0226745605469,
+  "outputs": {
+    "csv": "E:\\桌面\\v-Net\\locked_model\\labels\\current\\labels_2d.csv",
+    "jsonl": null,
+    "summary": "E:\\桌面\\v-Net\\locked_model\\labels\\current\\labels_2d_summary.json"
+  },
+  "labelSchema": {
+    "target": [
+      "steering",
+      "eY"
+    ],
+    "eyQuality": {
+      "ok": 1.0,
+      "inferred_missing_left": 0.6,
+      "inferred_missing_right": 0.6,
+      "insufficient_yellow_edges": 0.0,
+      "narrow_lane_width": 0.0
+    },
+    "note": "Rows with eyQuality=0 keep steering labels but should not contribute to e_y loss."
+  }
+}

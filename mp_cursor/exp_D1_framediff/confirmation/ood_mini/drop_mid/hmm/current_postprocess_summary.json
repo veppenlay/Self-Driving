@@ -1,0 +1,27 @@
+{
+  "scheme": "steering_only_hmm_online_filter",
+  "usesEy": false,
+  "inputPredCsv": "/root/autodl-tmp/v-Net_cursor/mp_cursor/exp_D1_framediff/confirmation/ood_mini/drop_mid/predictions_test.csv",
+  "stateModelJson": "/root/autodl-tmp/v-Net_cursor/epaicar_deploy/steering_only_hmm_online_model.json",
+  "outputCsv": "/root/autodl-tmp/v-Net_cursor/mp_cursor/exp_D1_framediff/confirmation/ood_mini/drop_mid/hmm/current_postprocess_predictions.csv",
+  "params": {
+    "transition_smoothing": 0.01,
+    "sigma_scale": 5.0,
+    "switch_penalty": 0.5,
+    "ey_weight": 0.0
+  },
+  "count": 423,
+  "rawSteeringMAE": 0.23674313709611872,
+  "currentPostSteeringMAE": 0.18111347517730497,
+  "deltaMAE": -0.055629661918813744,
+  "rawLargeErrorCounts": {
+    "absErrorGt0p5": 49,
+    "absErrorGt1p0": 29,
+    "absErrorGt2p0": 3
+  },
+  "currentPostLargeErrorCounts": {
+    "absErrorGt0p5": 31,
+    "absErrorGt1p0": 31,
+    "absErrorGt2p0": 3
+  }
+}

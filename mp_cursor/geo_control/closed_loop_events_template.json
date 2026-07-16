@@ -1,0 +1,11 @@
+{
+  "run_id": "P1_affordance_basement_2026xxxx",
+  "control_source": "geometry",
+  "controller_json": "epaicar_deploy/controller_pid.json",
+  "params_frozen_from": "dataset/26合并 source-domain calibration; NOT retuned on basement",
+  "laps_completed": 0,
+  "out_of_bounds": 0,
+  "interventions": 0,
+  "duration_s": 0,
+  "notes": "Tally out_of_bounds = times any wheel crossed the lane; interventions = manual takeovers. Keep the exact same course/speed as the baseline run."
+}

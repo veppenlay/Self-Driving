@@ -2,9 +2,9 @@
 # CPU-safe readiness check before flipping to GPU billing.
 set -euo pipefail
 
-REPO="/root/autodl-tmp/v-Net"
+REPO="/root/autodl-tmp/v-Net_cursor"
 source /root/miniconda3/etc/profile.d/conda.sh
-conda activate /root/autodl-tmp/envs/vnet
+conda activate /root/autodl-tmp/envs/vnet_cursor
 cd "$REPO"
 
 python - <<'PY'

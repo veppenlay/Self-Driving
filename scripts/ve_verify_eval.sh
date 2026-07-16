@@ -2,8 +2,8 @@
 # CPU-safe verify on no-card (2GB cgroup): single-thread, small batch.
 set -euo pipefail
 source /root/miniconda3/etc/profile.d/conda.sh
-conda activate /root/autodl-tmp/envs/vnet
-cd /root/autodl-tmp/v-Net
+conda activate /root/autodl-tmp/envs/vnet_cursor
+cd /root/autodl-tmp/v-Net_cursor
 
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
@@ -32,7 +32,7 @@ python locked_model/evaluate.py \
   --device cpu
 
 echo "==== RESULTS ===="
-echo "local_baseline_steeringMAE=0.2045544220148927"
+echo "baseline_raw_steeringMAE=0.20461061395469163"
 echo "---locked---"
 cat locked_model/evaluation/ve_locked_recheck/summary_test.json
 echo "---newtrain---"

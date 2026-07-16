@@ -1,0 +1,6 @@
+{
+  "count": 423,
+  "steeringMAE": 0.23372197151184082,
+  "eyWeightedMAE": 0.1381538063287735,
+  "predictionsCsv": "/root/autodl-tmp/v-Net_cursor/mp_cursor/exp_D1_framediff/evaluation/predictions_test.csv"
+}

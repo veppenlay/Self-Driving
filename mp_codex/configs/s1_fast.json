@@ -1,0 +1,56 @@
+{
+  "protocol": "S1_fast_discovery",
+  "data": {
+    "train": "dataset/26合并/train.txt",
+    "val": "dataset/26合并/val.txt",
+    "test": "dataset/26合并/test.txt -> dataset/25地下室",
+    "remoteLabelCsv": "locked_model/labels/remote/labels_2d.csv",
+    "expectedCounts": {
+      "train": 2654,
+      "val": 569,
+      "test": 423
+    }
+  },
+  "lockedBaseline": {
+    "checkpoint": "locked_model/checkpoints/best_seq_cfc_temporal3_2d.pth",
+    "checkpointSha256": "9ADC49E5DB94E566C4B406F9BFEABF8FC40D11F4829F03A2DBB3D6C69AF295FD",
+    "hmmJson": "epaicar_deploy/steering_only_hmm_online_model.json",
+    "hmmSha256": "319796A89B83765C744B95F0C96ABDE3B2D6279C29D0B831556632E3D4605F65",
+    "rawMae": 0.20461061395469163,
+    "hmmMae": 0.1672482219835827,
+    "rawAbsErrorGt1p0": 26,
+    "hmmAbsErrorGt1p0": 28,
+    "hmmAbsErrorGt2p0": 6
+  },
+  "sharedTraining": {
+    "epochs": 60,
+    "batchSize": 32,
+    "seed": 20260715,
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weightDecay": 0.0001,
+    "eyLossWeight": 0.35,
+    "earlyStopMinDelta": 0.005,
+    "earlyStopPatienceEpochs": 10,
+    "preprocess": "HSV + bottom 70% ROI + 144x192",
+    "numFrames": 3,
+    "frameStride": 1
+  },
+  "experiments": {
+    "S0": {
+      "variant": "locked Seq-CfC Temporal3 architecture",
+      "remoteRun": "mp_codex/runs/s0_short_baseline_seed20260715"
+    },
+    "R-DISC": {
+      "variant": "training-only two-channel lane heatmap head",
+      "laneLossWeight": 0.1,
+      "qualityWeights": {
+        "ok": 1.0,
+        "inferred_missing_left": 0.4,
+        "inferred_missing_right": 0.4,
+        "insufficient_yellow_edges": 0.0,
+        "narrow_lane_width": 0.0
+      }
+    }
+  }
+}

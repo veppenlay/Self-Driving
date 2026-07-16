@@ -2,9 +2,9 @@
 # Start Seq-CfC Temporal3 2D training on ve (run after switching to GPU instance).
 set -euo pipefail
 
-REPO="/root/autodl-tmp/v-Net"
+REPO="/root/autodl-tmp/v-Net_cursor"
 source /root/miniconda3/etc/profile.d/conda.sh
-conda activate /root/autodl-tmp/envs/vnet
+conda activate /root/autodl-tmp/envs/vnet_cursor
 cd "$REPO"
 
 python - <<'PY'
@@ -27,7 +27,10 @@ exec python locked_model/train.py \
   --output-dir "$OUT_DIR" \
   --model-variant seq_cfc_temporal3 \
   --num-frames 3 \
-  --epochs 80 \
+  --epochs 150 \
   --batch-size 32 \
   --num-workers 8 \
-  --device cuda
+  --device cuda \
+  --early-stop \
+  --early-stop-patience 0.005 \
+  --early-stop-patience-epochs 10

@@ -53,3 +53,9 @@ desktop.ini
 # Keep curated released checkpoints in this clean repo
 !checkpoints/**/*.pth
 !checkpoints/**/*.json
+
+# Locked pipeline: retain its released deployment artifact, ignore future runs.
+!epaicar_deploy/best_seq_cfc_temporal3_2d_correct.onnx
+/locked_model/runs/
+/locked_model/evaluation/recheck/
+/locked_model/evaluation/hmm_recheck/

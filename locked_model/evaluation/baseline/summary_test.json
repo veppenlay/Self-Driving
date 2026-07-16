@@ -1,0 +1,21 @@
+{
+  "checkpoint": "E:\\桌面\\v-Net\\locked_model\\checkpoints\\best_seq_cfc_temporal3_2d.pth",
+  "labelCsv": "E:\\桌面\\v-Net\\locked_model\\labels\\current\\labels_2d.csv",
+  "split": "test",
+  "count": 423,
+  "steeringMAE": 0.20461061395469163,
+  "eyWeightedMAE": 0.12204053504265261,
+  "eyQualitySum": 241.20000433921814,
+  "preprocess": {
+    "colorSpace": "hsv",
+    "inputSize": [144, 192],
+    "useRoi": true,
+    "roiBottomRatio": 0.7,
+    "illuminationProfile": "none"
+  },
+  "numFrames": 3,
+  "frameStride": 1,
+  "verifiedOn": "ve_cursor",
+  "remoteSource": "/root/autodl-tmp/v-Net_cursor/locked_model/runs/ablation_roi_chain_e150/ref_locked_roi/eval_test",
+  "note": "RAW MAE refreshed from ve GPU recheck of locked ROI checkpoint on labels/remote (25basement test)."
+}

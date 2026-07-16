@@ -1,0 +1,21 @@
+{
+  "checkpoint": "E:\\桌面\\v-Net\\locked_model\\checkpoints\\best_seq_cfc_temporal3_2d.pth",
+  "labelCsv": "E:\\桌面\\v-Net\\locked_model\\labels\\current\\labels_2d.csv",
+  "split": "train",
+  "count": 2654,
+  "steeringMAE": 0.040007819788644164,
+  "eyWeightedMAE": 0.052487407905347915,
+  "eyQualitySum": 1793.2000271081924,
+  "preprocess": {
+    "colorSpace": "hsv",
+    "inputSize": [
+      144,
+      192
+    ],
+    "useRoi": true,
+    "roiBottomRatio": 0.7,
+    "illuminationProfile": "none"
+  },
+  "numFrames": 3,
+  "frameStride": 1
+}

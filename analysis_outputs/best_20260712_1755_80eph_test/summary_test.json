@@ -1,0 +1,20 @@
+{
+  "checkpoint": "D:\\xwechat_files\\wxid_z8p8q7uppugs22_f04d\\msg\\file\\2026-07\\best_20260712_1755_80eph(1).pth",
+  "labelCsv": "E:\\桌面\\v-Net\\locked_model\\labels\\current\\labels_2d.csv",
+  "split": "test",
+  "count": 423,
+  "steeringMAE": 0.812146427627239,
+  "eyWeightedMAE": 0.1647792689019814,
+  "eyQualitySum": 241.20000433921814,
+  "preprocess": {
+    "colorSpace": "hsv",
+    "inputSize": [
+      144,
+      192
+    ],
+    "useRoi": false,
+    "illuminationProfile": "none"
+  },
+  "numFrames": 3,
+  "frameStride": 1
+}

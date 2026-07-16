@@ -1,0 +1,44 @@
+{
+  "protocol": {
+    "epochs": 40,
+    "batchSize": 32,
+    "labelCsv": "/root/autodl-tmp/v-Net/locked_model/labels/remote/labels_2d.csv",
+    "testSplit": "25basement via labels/remote test",
+    "experiments": {
+      "A": "init locked ROI best -> train --no-use-roi -> test",
+      "B1": "ImageNet backbone + train --no-use-roi from scratch -> test",
+      "B2": "init B1 best -> train --use-roi -> test",
+      "locked_roi_ref": "evaluate locked ROI checkpoint (no retrain)"
+    }
+  },
+  "testResults": {
+    "locked_roi_ref": {
+      "steeringMAE": 0.20461061395469163,
+      "eyWeightedMAE": 0.12204053504265261,
+      "count": 423,
+      "useRoi": true,
+      "checkpoint": "/root/autodl-tmp/v-Net/locked_model/checkpoints/best_seq_cfc_temporal3_2d.pth"
+    },
+    "A_roi_init_nonroi": {
+      "steeringMAE": 0.23198019893978664,
+      "eyWeightedMAE": 0.11245687265477451,
+      "count": 423,
+      "useRoi": false,
+      "checkpoint": "/root/autodl-tmp/v-Net/locked_model/runs/ablation_roi_chain/A_roi_init_nonroi_train/best_nonroi_from_roi.pth"
+    },
+    "B1_nonroi_scratch": {
+      "steeringMAE": 0.41566947245657726,
+      "eyWeightedMAE": 0.15506399783187,
+      "count": 423,
+      "useRoi": false,
+      "checkpoint": "/root/autodl-tmp/v-Net/locked_model/runs/ablation_roi_chain/B1_nonroi_scratch/best_nonroi_scratch.pth"
+    },
+    "B2_roi_from_nonroi": {
+      "steeringMAE": 0.3489971240194202,
+      "eyWeightedMAE": 0.12690185567344153,
+      "count": 423,
+      "useRoi": true,
+      "checkpoint": "/root/autodl-tmp/v-Net/locked_model/runs/ablation_roi_chain/B2_roi_from_nonroi/best_roi_from_nonroi.pth"
+    }
+  }
+}

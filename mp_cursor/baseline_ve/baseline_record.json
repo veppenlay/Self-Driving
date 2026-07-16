@@ -1,0 +1,28 @@
+{
+  "updatedAt": "2026-07-15",
+  "workspace": {
+    "remoteRepo": "/root/autodl-tmp/v-Net_cursor",
+    "remoteEnv": "/root/autodl-tmp/envs/vnet_cursor",
+    "localArtifacts": "E:/桌面/v-Net/mp_cursor/baseline_ve"
+  },
+  "lockedCheckpoint": "locked_model/checkpoints/best_seq_cfc_temporal3_2d.pth",
+  "testSplit": "25basement (labels/remote test, count=423)",
+  "baseline": {
+    "rawSteeringMAE": 0.20461061395469163,
+    "hmmSteeringMAE": 0.1672482219835827,
+    "eyWeightedMAE": 0.12204053504265261,
+    "previousRaw": 0.2045544220148927,
+    "previousHmm": 0.16743734727909101
+  },
+  "ablationE150TestRaw": {
+    "locked_roi_ref": 0.20461061395469163,
+    "A_roi_init_nonroi": 0.27680565737987084,
+    "B1_nonroi_scratch": 0.363799076732116,
+    "B2_roi_from_nonroi": 0.2557439630736661
+  },
+  "decision": "Retain locked ROI checkpoint as sole baseline. Ablation A/B1/B2 all worse on basement test; no challenger replaces it.",
+  "challengerHardLimit": {
+    "hmmMaeMustBeat": 0.1672482219835827,
+    "reportRawAsWell": true
+  }
+}

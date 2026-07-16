@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    repo = Path("/root/autodl-tmp/v-Net").resolve()
+    repo = Path("/root/autodl-tmp/v-Net_cursor").resolve()
     src = repo / "locked_model/labels/current/labels_2d.csv"
     out_dir = repo / "locked_model/labels/remote"
     out_dir.mkdir(parents=True, exist_ok=True)

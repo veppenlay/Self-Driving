@@ -1,0 +1,7 @@
+{
+  "rawSteeringMAE": 0.238195164856054,
+  "hmmSteeringMAE": 0.19207328605200946,
+  "baselineHmmMae": 0.1672482219835827,
+  "deltaVsBaseline": 0.024825064068426772,
+  "sourceSummary": "/root/autodl-tmp/v-Net_cursor/mp_cursor/exp_D1_framediff/confirmation/ood_mini/blur/hmm/current_postprocess_summary.json"
+}
